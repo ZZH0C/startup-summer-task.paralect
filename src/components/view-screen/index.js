@@ -4,7 +4,6 @@ import UserScreen from "./user-info";
 
 
 async function getUserData(username, setUserInfo) {
-    console.log(username)
     let url_user = `https://api.github.com/users/${username}`;
     let response_user = await fetch(url_user);
     let url_repo = `https://api.github.com/users/${username}/repos`;
@@ -17,7 +16,6 @@ async function getUserData(username, setUserInfo) {
 
 
 export default function ViewScreen() {
-
     const inputEl = useRef(null);
     let inputValue = '';
     const [data, setData] = useState({

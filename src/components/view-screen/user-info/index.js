@@ -7,19 +7,17 @@ import following from '../../../assets/following-icon.png'
 import {UserRepos} from "./user-info_repo";
 
 export function UserScreen(props) {
-    console.log('proprs next ')
-    console.log(props)
     const [loaderStyle, setLoaderStyle] = useState('loader-background hidden')
-    const [testVar, setTestVar] = useState('234awfawe5raw34')
+    const [viewScreenContent, setViewScreenContent] = useState('')
 
 
     useEffect(() => {
 
         if (props.userInfo.user.message === 'Not Found' || !props) {
-            setTestVar(
+            setViewScreenContent(
                 <div className='view-screen_about'>
                     <img
-                        alt='fail picture'
+                        alt='Human icon'
                         src={humanIcon}
                         onLoad={() => setLoaderStyle('loader-background hidden')}
                     />
@@ -27,12 +25,12 @@ export function UserScreen(props) {
                 </div>
             )
         } else {
-            setTestVar(
+            setViewScreenContent(
                 <div className='view-screen_user-info_container'>
                     <div className='view-screen_user-info_profile'>
                         <img
                             className='view-screen_user-info_profile-image'
-                            alt='Profile picture'
+                            alt='Profile avatar'
                             src={props.userInfo.user.avatar_url}
                             onLoad={() => setLoaderStyle('loader-background hidden')}
                         />
@@ -68,11 +66,10 @@ export function UserScreen(props) {
     }, [props])
 
     useEffect(() => {
-        console.log('This is Start!')
-        setTestVar(
+        setViewScreenContent(
             <div className='view-screen_about'>
                 <img
-                    alt='start picture'
+                    alt='Search icon'
                     src={searchIcon}
                     onLoad={() => setLoaderStyle('loader-background hidden')}
                 />
@@ -89,7 +86,7 @@ export function UserScreen(props) {
                 <div className="lds-dual-ring">
                 </div>
             </div>
-            {testVar}
+            {viewScreenContent}
         </div>
     );
 }

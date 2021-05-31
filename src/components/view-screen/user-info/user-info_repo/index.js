@@ -6,8 +6,6 @@ import noRepoIcon from '../../../../assets/no-repo-icon.png'
 const PER_PAGE = 4;
 
 export function UserRepos(props) {
-    console.log(props)
-
     const repos = props.repos.map((elem, index) =>
         <div key={index} className='repo_item'>
             <a
