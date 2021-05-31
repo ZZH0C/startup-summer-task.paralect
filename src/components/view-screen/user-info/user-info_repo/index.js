@@ -10,12 +10,12 @@ export function UserRepos(props) {
 
     const repos = props.repos.map((elem, index) =>
         <div key={index} className='repo_item'>
-           <a
-               target="_blank"
-               rel="noopener noreferrer"
-               href={elem.html_url}>
-               {elem.name}
-           </a>
+            <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href={elem.html_url}>
+                {elem.name}
+            </a>
             <span>{elem.description}</span>
         </div>
     );
@@ -42,19 +42,19 @@ export function UserRepos(props) {
 
                 {currentPageData}
                 <div className='pagination_container'>
-                <ReactPaginate
-                    previousLabel={"<"}
-                    nextLabel={">"}
-                    pageCount={pageCount}
-                    onPageChange={handlePageClick}
-                    marginPagesDisplayed={1}
-                    pageRangeDisplayed={2}
-                    containerClassName={"pagination"}
-                    previousLinkClassName={"pagination__link"}
-                    nextLinkClassName={"pagination__link"}
-                    disabledClassName={"pagination__link--disabled"}
-                    activeClassName={"pagination__link--active"}
-                />
+                    <ReactPaginate
+                        previousLabel={"<"}
+                        nextLabel={">"}
+                        pageCount={pageCount}
+                        onPageChange={handlePageClick}
+                        marginPagesDisplayed={1}
+                        pageRangeDisplayed={2}
+                        containerClassName={"pagination"}
+                        previousLinkClassName={"pagination__link"}
+                        nextLinkClassName={"pagination__link"}
+                        disabledClassName={"pagination__link--disabled"}
+                        activeClassName={"pagination__link--active"}
+                    />
                 </div>
             </div>
         )

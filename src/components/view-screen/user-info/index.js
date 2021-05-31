@@ -11,15 +11,10 @@ export function UserScreen(props) {
     console.log(props)
     const [loaderStyle, setLoaderStyle] = useState('loader-background hidden')
     const [testVar, setTestVar] = useState('234awfawe5raw34')
-    // const roomView = rooms.map((elem) =>
-    //     <Tab key={elem.room.roomId} eventKey={elem.room.roomId} title={elem.room.name}>
-    //         <Room props={elem}/>
-    //     </Tab>
-    // );
+
 
     useEffect(() => {
 
-        // console.log(props.userInfo.message)
         if (props.userInfo.user.message === 'Not Found' || !props) {
             setTestVar(
                 <div className='view-screen_about'>
@@ -65,9 +60,7 @@ export function UserScreen(props) {
                             </div>
                         </div>
                     </div>
-                    {/*<div className='view-screen_user-info_repo'>*/}
-                        <UserRepos repos={props.userInfo.repos}/>
-                    {/*</div>*/}
+                    <UserRepos repos={props.userInfo.repos}/>
                 </div>
             )
         }
